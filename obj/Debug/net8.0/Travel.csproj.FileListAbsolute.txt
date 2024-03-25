@@ -1,0 +1,15 @@
+/Users/lizexu/Desktop/Promoted/Travel/bin/Debug/net8.0/Travel
+/Users/lizexu/Desktop/Promoted/Travel/bin/Debug/net8.0/Travel.deps.json
+/Users/lizexu/Desktop/Promoted/Travel/bin/Debug/net8.0/Travel.runtimeconfig.json
+/Users/lizexu/Desktop/Promoted/Travel/bin/Debug/net8.0/Travel.dll
+/Users/lizexu/Desktop/Promoted/Travel/bin/Debug/net8.0/Travel.pdb
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.AssemblyInfoInputs.cache
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.AssemblyInfo.cs
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.csproj.CoreCompileInputs.cache
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.sourcelink.json
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.dll
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/refint/Travel.dll
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.pdb
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/Travel.genruntimeconfig.cache
+/Users/lizexu/Desktop/Promoted/Travel/obj/Debug/net8.0/ref/Travel.dll
