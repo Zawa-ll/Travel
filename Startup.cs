@@ -24,21 +24,27 @@ namespace Travel.API
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(setupAction => {
+                setupAction.ReturnHttpNotAcceptable = true;
+                //setupAction.OutputFormatters.Add(
+                //    new XmlDataContractSerializerOutputFormatter()    
+                //);
+            }).AddXmlDataContractSerializerFormatters();
+
             services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
             //services.AddSingleton
             //services.AddScoped
+
             services.AddDbContext<AppDbContext>(option => {
-                //option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TravelDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-                //option.UseSqlServer("server=localhost; Database=TravelDb; User Id=sa; Password=PaSSword12!;");
-                //option.UseSqlServer(Configuration["DbContext:ConnectionString"]);
-                option.UseMySql(
-                    Configuration["DbContext:ConnectionString"],
-                    ServerVersion.AutoDetect(Configuration["DbContext:ConnectionString"]));
+                //option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FakeXiechengDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //option.UseSqlServer("server=localhost; Database=FakeXiechengDb; User Id=sa; Password=PaSSword12!;");
+                option.UseSqlServer(Configuration["DbContext:ConnectionString"]);
             });
+
+           // Scanning profile files
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

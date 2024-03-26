@@ -26,14 +26,19 @@ namespace Travel.API.Controllers
             _mapper = mapper;
         }
 
+        // api/touristRoutes?keyword=RouteParameter
         [HttpGet]
-        [HttpHead] // Force an action method should handle HTTP HEAD requests
-        public IActionResult GerTouristRoutes()
+        [HttpHead]
+        public IActionResult GerTouristRoutes(
+            [FromQuery] TouristRouteResourceParamaters paramaters // params here is an object
+        //[FromQuery] string keyword,
+        //string rating //等于equalTo lessThan3, largerThan2, equalTo5 
+        )
         {
-            var touristRoutesFromRepo = _touristRouteRepository.GetTouristRoutes();
+            var touristRoutesFromRepo = _touristRouteRepository.GetTouristRoutes(paramaters.Keyword, paramaters.RatingOperator, paramaters.RatingValue);
             if (touristRoutesFromRepo == null || touristRoutesFromRepo.Count() <= 0)
             {
-                return NotFound("The photo doesn't exist.");
+                return NotFound("No travel route found");
             }
             var touristRoutesDto = _mapper.Map<IEnumerable<TouristRouteDto>>(touristRoutesFromRepo);
             return Ok(touristRoutesDto);
