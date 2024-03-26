@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Travel.API.Models
 {
     public class TouristRoute
@@ -31,7 +30,7 @@ namespace Travel.API.Models
         [MaxLength]
         public string Notes { get; set; }
         public ICollection<TouristRoutePicture> TouristRoutePictures { get; set; } 
-            = new List<TouristRoutePicture>();
+            = new List<TouristRoutePicture>(); // TouristRoutePicture is another model
         public double? Rating { get; set; }
         public TravelDays? TravelDays { get; set; }
         public TripType? TripType { get; set; }
