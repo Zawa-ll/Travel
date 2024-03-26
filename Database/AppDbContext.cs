@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FakeXiecheng.API.Models;
+using Travel.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace FakeXiecheng.API.Database
+namespace Travel.API.Database
 {
     public class AppDbContext : DbContext
     {
